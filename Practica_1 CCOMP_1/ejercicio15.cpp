@@ -1,4 +1,4 @@
-/*Escriba una función que evalue una cadena de caracteres y retorne true si la cadena
+/*Escriba una funciÃ³n que evalue una cadena de caracteres y retorne true si la cadena
 representa un palindrome y false en caso contrario -Jose Salinas-*/
 #include <iostream>
 
@@ -9,8 +9,8 @@ bool palindrome(const string& cadena)
     if (cadena.empty())
         return false;
 
-    int i = 0;                // first characters
-    int j = cadena.length() - 1; // last character
+    int i = 0;                
+    int j = cadena.length() - 1; 
 
     while (i < j)
     {
