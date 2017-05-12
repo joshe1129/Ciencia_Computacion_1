@@ -8,7 +8,7 @@ class Vector
         Punto inicio, fin;
         void print();
         void offset(float offsetx,float offsety);
-        void distancia();
+        float distancia();
 };
 
 #endif // VECTOR_H
