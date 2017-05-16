@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1494948805 source:d:\ciencia_computacion_1\16_05_2017\main.cpp
+	<iostream>
+	"Complejo.h"
+
+1494948805 d:\ciencia_computacion_1\16_05_2017\include\complejo.h
+	"Complejo.h"
+
+1494948805 source:d:\ciencia_computacion_1\16_05_2017\src\complejo.cpp
+	<iostream>
+	"Complejo.h"
+
