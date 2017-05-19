@@ -1,0 +1,51 @@
+# depslib dependency file v1.0
+1495210875 source:d:\ciencia_computacion_1\19_05_2017\main.cpp
+	<iostream>
+	"Vehicle.h"
+	"Car.h"
+
+1495209323 d:\ciencia_computacion_1\19_05_2017\include\vehicle.h
+	"Vehicle.h"
+	<string.h>
+	<strings.h>
+	<iostream>
+
+1495207319 source:d:\ciencia_computacion_1\19_05_2017\src\bycicle.cpp
+	"Bycicle.h"
+	"Vehicle.h"
+	<iostream>
+
+1495207319 d:\ciencia_computacion_1\19_05_2017\include\bycicle.h
+	"Vehicle.h"
+
+1495210814 source:d:\ciencia_computacion_1\19_05_2017\src\car.cpp
+	"Car.h"
+	"Vehicle.h"
+	<iostream>
+	<string.h>
+	<strings.h>
+	<string>
+	<sstream>
+
+1495210814 d:\ciencia_computacion_1\19_05_2017\include\car.h
+	"Vehicle.h"
+	<string.h>
+	<strings.h>
+	<iostream>
+
+1495207319 source:d:\ciencia_computacion_1\19_05_2017\src\truck.cpp
+	"Truck.h"
+	"Vehicle.h"
+	<iostream>
+
+1495207319 d:\ciencia_computacion_1\19_05_2017\include\truck.h
+	"Vehicle.h"
+
+1495210814 source:d:\ciencia_computacion_1\19_05_2017\src\vehicle.cpp
+	"Vehicle.h"
+	<iostream>
+	<string.h>
+	<strings.h>
+	<string>
+	<sstream>
+
