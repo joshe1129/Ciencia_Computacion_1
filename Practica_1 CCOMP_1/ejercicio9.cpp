@@ -1,6 +1,6 @@
-/* Implemente en una funciÛn el algoritmo de ordenamiento llamado insertion-sort. El
-algoritmo se encuentra en pseudocÛdigo en el libro ìIntroduction to algorithmsî de CRLS,
-capÌtulo 2. - JOSE SALINAS- */
+/* Implemente en una funci√≥n el algoritmo de ordenamiento llamado insertion-sort. El
+algoritmo se encuentra en pseudoc√≥digo en el libro ‚ÄúIntroduction to algorithms‚Äù de CRLS,
+cap√≠tulo 2. - JOSE SALINAS- */
 #include <iostream>
 #include <string>
 #include <strings.h>
@@ -9,8 +9,8 @@ capÌtulo 2. - JOSE SALINAS- */
 using namespace std;
 int insert_sort(int arreglo[],const int tam)
 {
-    int i=0, key=0; // *always* initialize variables
-        for (int j=1; i<tam; j++) // use pre-increment to avoid unneccessary temorary object
+    int i=0, key=0; 
+        for (int j=1; i<tam; j++) 
         {
                 key= arreglo[j];
                 i = j-1;
