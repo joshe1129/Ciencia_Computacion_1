@@ -1,0 +1,28 @@
+# depslib dependency file v1.0
+1496155949 source:d:\ciencia_computacion_1\30_05_2017\main.cpp
+	<iostream>
+	<vector>
+	"Gizmo.h"
+	"Gadget.h"
+	"Widget.h"
+
+1496155764 d:\ciencia_computacion_1\30_05_2017\include\gizmo.h
+	"Widget.h"
+
+1496155689 d:\ciencia_computacion_1\30_05_2017\include\widget.h
+
+1496155689 d:\ciencia_computacion_1\30_05_2017\include\gadget.h
+	"Widget.h"
+
+1496155689 source:d:\ciencia_computacion_1\30_05_2017\src\gadget.cpp
+	"Gadget.h"
+	"Widget.h"
+
+1496155689 source:d:\ciencia_computacion_1\30_05_2017\src\gizmo.cpp
+	"Gizmo.h"
+	"Gadget.h"
+	"Widget.h"
+
+1496155993 source:d:\ciencia_computacion_1\30_05_2017\src\widget.cpp
+	"Widget.h"
+
