@@ -1,0 +1,27 @@
+# depslib dependency file v1.0
+1495554217 source:d:\ciencia_computacion_1\23_05_2017\main.cpp
+	<iostream>
+	"Empleado.h"
+	"Manager.h"
+	"Jefe.h"
+
+1495553760 d:\ciencia_computacion_1\23_05_2017\include\empleado.h
+	<iostream>
+
+1495553560 d:\ciencia_computacion_1\23_05_2017\include\manager.h
+	"Empleado.h"
+
+1495553760 source:d:\ciencia_computacion_1\23_05_2017\src\empleado.cpp
+	"Empleado.h"
+
+1495553760 source:d:\ciencia_computacion_1\23_05_2017\src\manager.cpp
+	"Manager.h"
+	"Empleado.h"
+
+1495554137 source:d:\ciencia_computacion_1\23_05_2017\src\jefe.cpp
+	"Jefe.h"
+	"Empleado.h"
+
+1495554137 d:\ciencia_computacion_1\23_05_2017\include\jefe.h
+	"Empleado.h"
+
