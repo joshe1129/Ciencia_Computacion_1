@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include <conio.h>
 #include <windows.h>
+#include <stdlib.h>
+#include <list>
+using namespace std;
 
 #define ARRIBA 72 // NUMERO ASIGNADO A UNA TECLA DEL TECLADO
 #define IZQUIERDA 75
@@ -49,6 +52,9 @@ void Pintar_Limites(){
     int vidas;
 public:
     Nave(int cx,int cy, int ccorazones, int cvidas):x(cx),y(cy),corazones(ccorazones),vidas(cvidas){}
+    int CX(){return x;}
+    int CY(){return y;}
+    void CCOR(){ corazones --;}
     void pintar();
     void borrar();
     void mover();
@@ -66,9 +72,9 @@ void Nave::pintar(){
 
 }
 void Nave::borrar(){
-    gotoxy(x,y);   printf("             ");
-    gotoxy(x,y+1); printf("             ");
-    gotoxy(x,y+2); printf("             ");
+    gotoxy(x,y);   printf("         ");
+    gotoxy(x,y+1); printf("         ");
+    gotoxy(x,y+2); printf("         ");
 }
 void Nave::mover(){
     if(kbhit()){
@@ -100,23 +106,23 @@ void Nave::pintar_corazones(){
     }
 }
 
-void Nave::morir(){
+void Nave::morir(){//animacion explotar nave
     if(corazones == 0){
         borrar();
-        gotoxy(x,y);   printf("   **   ");
-        gotoxy(x,y+1); printf("  ****  ");
-        gotoxy(x,y+2); printf("   **   ");
+        gotoxy(x,y);   printf("   *   ");
+        gotoxy(x,y+1); printf("  * *  ");
+        gotoxy(x,y+2); printf("   *   ");
         Sleep(200);
 
         borrar();
-        gotoxy(x,y);   printf(" *  **  * ");
-        gotoxy(x,y+1); printf("*  *  *  *");
-        gotoxy(x,y+2); printf(" *  **  * ");
+        gotoxy(x,y);   printf(" *  * ");
+        gotoxy(x,y+1); printf("* ** *");
+        gotoxy(x,y+2); printf(" *  * ");
         Sleep(200);
         borrar();
-        gotoxy(x,y);   printf(" *  * *  * ");
-        gotoxy(x,y+1); printf("*  * * *  *");
-        gotoxy(x,y+2); printf(" *  * *  * ");
+        gotoxy(x,y);   printf(" *  *  * ");
+        gotoxy(x,y+1); printf("*  ***  *");
+        gotoxy(x,y+2); printf(" *  *  * ");
         Sleep(200);
         borrar();
         vidas--;
@@ -128,16 +134,109 @@ void Nave::morir(){
 
 }
 
+class Asteroide{
+    int x,y;
+public:
+    Asteroide(int cax,int cay):x(cax),y(cay){}
+    void pintar();
+    void mover();
+    void colision(class Nave &n);
+
+
+};
+
+void Asteroide::pintar(){//asteroides en la pantalla
+    gotoxy(x,y); printf("%c",184);
+}
+void Asteroide::mover(){
+    gotoxy(x,y);printf(" ");
+    y++;
+    if(y > 29){
+        x = rand()%71+4;
+        y = 4;
+    }
+    pintar();
+}
+
+void Asteroide::colision(class Nave &n){
+    if( x >= n.CX() && x < n.CX()+5 && y >= n.CY() && y <= n.CY()+2 ){//intervalo que ocupa la nave en la colision
+        n.borrar();
+        n.CCOR();
+        n.pintar();
+        n.pintar_corazones();
+        x = rand()%71+4;
+        y = 4;
+    }
+
+
+}
+
+class Bala{
+    int x,y;
+public:
+    Bala(int cx, int cy):x(cx),y(cy){}
+    int CX(){return x;}
+    INT CY(){return y;}
+    void mover();
+    bool fuera();
+
+
+};
+
+void Bala::mover(){
+    gotoxy(x,y); printf(" ");
+    y--;
+    gotoxy(x,y); printf("|");
+
+}
+
+bool Bala::fuera()
+{
+    if (y==4) return true;
+    return false;
+}
 
 int main()
 {
     OcultarCursor();
     Pintar_Limites();
-    Nave n(7,7,3,3);
+    Nave n(30,25,3,3);
     n.pintar();
     n.pintar_corazones();
+    list<Asteroide *> A;
+    list<Asteroide *>:: iterator itA;
+    for(int i = 0; i <5 ; i++){
+            A.push_back(new Asteroide(rand()%75+3, rand()%5 + 4));
+
+    }
+
+
+    list<Bala *> B;//lista de punteros de objetos de la clase bala
+    list<Bala *>::iterator it;
     bool game_over = false;
     while(!game_over){
+
+        if(kbhit())
+        {
+            char tecla = getch();
+            if (tecla == 'a')
+                B.push_back(new Bala(n.CX()+2, n.CY() -1 ));
+        }
+        for(it = B.begin();it != B.end(); it++)
+        {
+            (*it)->mover();
+            if((*it)->fuera()){
+                gotoxy((*it)->CX(), (*it)->CY()); printf(" ");
+                delete(*it);
+                it = B.erase(it);//iterador se posiciona en el siguiente iterador
+            }
+
+        }
+
+        for(itA = A.begin(); itA != A.end(); itA++){
+            (*itA)->mover();
+            (*itA)->colision(n);
+        }
         n.morir();
         n.mover();
         Sleep(30);

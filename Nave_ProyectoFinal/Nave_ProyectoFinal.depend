@@ -1,6 +1,8 @@
 # depslib dependency file v1.0
-1495644888 source:c:\users\user\documents\ucsp\ccomp1\ciencia_computacion_1\nave_proyectofinal\main.cpp
+1496249450 source:c:\users\user\documents\ucsp\ccomp1\ciencia_computacion_1\nave_proyectofinal\main.cpp
 	<stdio.h>
 	<conio.h>
 	<windows.h>
+	<stdlib.h>
+	<list>
 
