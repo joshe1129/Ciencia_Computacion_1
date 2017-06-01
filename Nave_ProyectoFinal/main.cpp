@@ -3,6 +3,7 @@
 #include <windows.h>
 #include <stdlib.h>
 #include <list>
+#include <iostream>
 using namespace std;
 
 #define ARRIBA 72 // NUMERO ASIGNADO A UNA TECLA DEL TECLADO
@@ -54,6 +55,7 @@ public:
     Nave(int cx,int cy, int ccorazones, int cvidas):x(cx),y(cy),corazones(ccorazones),vidas(cvidas){}
     int CX(){return x;}
     int CY(){return y;}
+    int Vidas(){return vidas;}
     void CCOR(){ corazones --;}
     void pintar();
     void borrar();
@@ -141,6 +143,8 @@ public:
     void pintar();
     void mover();
     void colision(class Nave &n);
+    int AX(){return x;}
+    int AY(){return y;}
 
 
 };
@@ -205,7 +209,7 @@ int main()
     n.pintar_corazones();
     list<Asteroide *> A;
     list<Asteroide *>:: iterator itA;
-    for(int i = 0; i <5 ; i++){
+    for(int i = 0; i <=7 ; i++){
             A.push_back(new Asteroide(rand()%75+3, rand()%5 + 4));
 
     }
@@ -214,8 +218,9 @@ int main()
     list<Bala *> B;//lista de punteros de objetos de la clase bala
     list<Bala *>::iterator it;
     bool game_over = false;
+    int puntos = 0;
     while(!game_over){
-
+        gotoxy(4,2);printf("Puntos: %d",puntos);
         if(kbhit())
         {
             char tecla = getch();
@@ -237,10 +242,46 @@ int main()
             (*itA)->mover();
             (*itA)->colision(n);
         }
+
+        for(itA=A.begin(); itA != A.end(); itA++){
+            for(it = B.begin() ; it != B.end() ; it++){
+                if((*itA)->AX() == (*it)->CX() && ( (*itA)->AY()+1 == (*it)->CY() || (*itA)->AY() == (*it)->CY() )) //detectar colision de balas y asteroides
+                    {
+                        gotoxy((*it)->CX(),(*it)->CY());printf(" ");
+                        delete(*it);
+                        it = B.erase(it);
+
+                        A.push_back(new Asteroide(rand()%75+3, rand()%5 + 4));
+                            gotoxy((*itA)->AX(),(*itA)->AY());printf(" ");
+                            delete(*itA);
+                            itA = A.erase(itA);
+
+                        puntos+=5;
+
+                    }
+
+
+            }
+
+
+        }
+        if(n.Vidas() == 0) game_over = true;
+
         n.morir();
         n.mover();
         Sleep(30);
     }
+    system("cls"); //Limpia la pantalla con ms dos.
+    gotoxy(1,10);printf("  ________                           ________                        ._.\n");
+    gotoxy(1,11);printf(" /  _____/ _____     _____    ____   \\_____  \\ ___  __  ____ _______ | |\n");
+    gotoxy(1,12);printf("/   \\  ___ \\__  \\   /     \\ _/ __ \\   /   |   \\\\  \\/ /_/ __ \\\\_  __ \\| |\n");
+    gotoxy(1,13);printf("\\    \\_\\  \\ / __ \\_|  Y Y  \\\\  ___/  /    |    \\\\   / \\  ___/ |  | \\/ \\|\n");
+    gotoxy(1,14);printf(" \\______  /(____  /|__|_|  / \\___  > \\_______  / \\_/   \\___  >|__|    __\n");
+    gotoxy(1,15);printf("        \\/      \\/       \\/      \\/          \\/            \\/         \\/\n");
+
+
+    system("pause");
+    Sleep(30);
 
     return 0;
 
