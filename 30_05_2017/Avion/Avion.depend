@@ -1,0 +1,39 @@
+# depslib dependency file v1.0
+1496377007 source:c:\users\user\documents\ucsp\ccomp1\ciencia_computacion_1\30_05_2017\avion\main.cpp
+	<iostream>
+	"Aeronave.h"
+	"Avion.h"
+	"Helicoptero.h"
+	"Torre.h"
+	<vector>
+
+1496375648 source:c:\users\user\documents\ucsp\ccomp1\ciencia_computacion_1\30_05_2017\avion\src\aeronave.cpp
+	"Aeronave.h"
+	<iostream>
+
+1496375623 c:\users\user\documents\ucsp\ccomp1\ciencia_computacion_1\30_05_2017\avion\include\aeronave.h
+
+1496375697 source:c:\users\user\documents\ucsp\ccomp1\ciencia_computacion_1\30_05_2017\avion\src\avion.cpp
+	"Avion.h"
+	<iostream>
+
+1496375623 c:\users\user\documents\ucsp\ccomp1\ciencia_computacion_1\30_05_2017\avion\include\avion.h
+	<Aeronave.h>
+
+1496375697 source:c:\users\user\documents\ucsp\ccomp1\ciencia_computacion_1\30_05_2017\avion\src\helicoptero.cpp
+	"Helicoptero.h"
+	<iostream>
+
+1496375623 c:\users\user\documents\ucsp\ccomp1\ciencia_computacion_1\30_05_2017\avion\include\helicoptero.h
+	<Aeronave.h>
+
+1496376461 c:\users\user\documents\ucsp\ccomp1\ciencia_computacion_1\30_05_2017\avion\include\torre.h
+	"Aeronave.h"
+	"Avion.h"
+	"Helicoptero.h"
+	<vector>
+	<iostream>
+
+1496376203 source:c:\users\user\documents\ucsp\ccomp1\ciencia_computacion_1\30_05_2017\avion\src\torre.cpp
+	"Torre.h"
+

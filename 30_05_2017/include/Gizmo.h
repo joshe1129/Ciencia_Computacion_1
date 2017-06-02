@@ -2,9 +2,10 @@
 #define GIZMO_H
 #include "Widget.h"
 
-class Gizmo:public Widget{
-    public:
-        virtual int f();
+class Gizmo:public Widget
+{
+public:
+    virtual int f();
 };
 
 #endif // GIZMO_H

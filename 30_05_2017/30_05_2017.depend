@@ -26,3 +26,15 @@
 1496155993 source:d:\ciencia_computacion_1\30_05_2017\src\widget.cpp
 	"Widget.h"
 
+1496245092 source:c:\users\user\documents\ucsp\ccomp1\ciencia_computacion_1\30_05_2017\src\gadget.cpp
+	"Gadget.h"
+	"Widget.h"
+
+1496245092 source:c:\users\user\documents\ucsp\ccomp1\ciencia_computacion_1\30_05_2017\src\gizmo.cpp
+	"Gizmo.h"
+	"Gadget.h"
+	"Widget.h"
+
+1496245092 source:c:\users\user\documents\ucsp\ccomp1\ciencia_computacion_1\30_05_2017\src\widget.cpp
+	"Widget.h"
+
