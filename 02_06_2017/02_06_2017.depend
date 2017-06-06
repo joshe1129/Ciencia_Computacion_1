@@ -1,11 +1,11 @@
 # depslib dependency file v1.0
-1496419678 source:d:\ciencia_computacion_1\02_06_2017\main.cpp
+1496758565 source:d:\ciencia_computacion_1\02_06_2017\main.cpp
 	<iostream>
 	"geometry.h"
 
-1496420614 d:\ciencia_computacion_1\02_06_2017\include\geometry.h
+1496758565 d:\ciencia_computacion_1\02_06_2017\include\geometry.h
 
-1496420232 source:d:\ciencia_computacion_1\02_06_2017\src\geometry.cpp
+1496758565 source:d:\ciencia_computacion_1\02_06_2017\src\geometry.cpp
 	"geometry.h"
 	<cmath>
 	<iostream>

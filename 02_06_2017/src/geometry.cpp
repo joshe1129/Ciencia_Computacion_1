@@ -2,50 +2,50 @@
 #include <cmath>
 #include <iostream>
 using namespace std;
-PointArray::PointArray (){
-    size = 0;
-    points = new Point [0];
+PointArray::PointArray (){ // constructor del array de puntos
+    size = 0; // tamaño 0
+    points = new Point [0]; //arregtlo de puntos
 }
 
 PointArray::PointArray( const Point ptsToCopy [], const int toCopySize ) {
-    size = toCopySize;
-    points = new Point[toCopySize];
+    size = toCopySize; // modifica el tamaño
+    points = new Point[toCopySize]; // modifica el arreglo de puntos con el tamaño enviado
     for (int i = 0; i < toCopySize; ++i)
-        points[i] = ptsToCopy[i];
+        points[i] = ptsToCopy[i]; // copia los valores de una cadena de puntos a otra
 }
 PointArray::PointArray( const PointArray &other){
-    size = other.size;
-    points = new Point[size];
+    size = other.size; // copia el valor de otro arreglo de punteros
+    points = new Point[size]; // modifica el puntero points
     for(int i = 0; i < size; i++)
-        points[i] = other.points[i];
+        points[i] = other.points[i];// copia los valores de un puntero de puntos al puntero de puntos points
 }
 PointArray::~PointArray (){
     delete [] points;
 }
 void PointArray::resize( int newSize){
-    Point *pts = new Point[newSize ];
-    int minSize = (newSize > size ? size : newSize);
+    Point *pts = new Point[newSize ]; // crea otro puntero punto
+    int minSize = (newSize > size ? size : newSize);// define un nuevo tamaño y le asigana el tamaño minimo
     for(int i = 0; i < minSize;i++)
-        pts[i] = points[i];
-    delete [] points;
-    size = newSize;
-    points = pts;
+        pts[i] = points[i];// copia el arreglo de puntos al nuevo arreglo
+    delete [] points; // elimina el arreglo de puntos points
+    size = newSize; // redefine el tamaño con el nuevo tamaño
+    points = pts; // el puntero del arrglo de puntos points toma el valor del nuevo puntero
 }
 
 void PointArray::clear(){
-    resize (0);
+    resize (0); // elimina los elementos del arreglo de puntos modificando su tamaño a 0
 }
 void PointArray::push_back( const Point &p){
-    resize(size + 1);
-    points[size - 1] = p;
+    resize(size + 1); // crea un nuevo puntero para poder modificar el puntero principal con un tamaño nuevo y los mismos datos
+    points[size - 1] = p; //  //agrega un punto al final de points
 }
 
 void PointArray::insert(const int pos , const Point &p){
-    resize(size + 1);
+    resize(size + 1); // crea un nuevo puntero para poder modificar el puntero principal con un tamaño nuevo y los mismos datos
     for(int i = size - 1; i > pos; i--){
-            points[i] = points[i - 1];
+            points[i] = points[i - 1]; // mueve los puntos a la derecha
     }
-    points[pos] = p;
+    points[pos] = p; // agrega un nuevo punto a la poscicion dada
 }
 
 void PointArray::remove( const int pos){
