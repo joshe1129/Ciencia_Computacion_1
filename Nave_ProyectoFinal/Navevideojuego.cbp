@@ -2,12 +2,12 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="Nave_ProyectoFinal" />
+		<Option title="Navevideojuego" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug">
-				<Option output="bin/Debug/Nave_ProyectoFinal" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Debug/Navevideojuego" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -16,7 +16,7 @@
 				</Compiler>
 			</Target>
 			<Target title="Release">
-				<Option output="bin/Release/Nave_ProyectoFinal" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Release/Navevideojuego" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Release/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -32,7 +32,22 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Navevideojuego.depend" />
+		<Unit filename="bin/Debug/Navevideojuego.exe" />
+		<Unit filename="include/Asteroide.h" />
+		<Unit filename="include/Bala.h" />
+		<Unit filename="include/Gamemanager.h" />
+		<Unit filename="include/Nave.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="obj/Debug/main.o" />
+		<Unit filename="obj/Debug/src/Asteroide.o" />
+		<Unit filename="obj/Debug/src/Bala.o" />
+		<Unit filename="obj/Debug/src/Gamemanager.o" />
+		<Unit filename="obj/Debug/src/Nave.o" />
+		<Unit filename="src/Asteroide.cpp" />
+		<Unit filename="src/Bala.cpp" />
+		<Unit filename="src/Gamemanager.cpp" />
+		<Unit filename="src/Nave.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

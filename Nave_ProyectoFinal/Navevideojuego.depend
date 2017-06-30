@@ -1,0 +1,80 @@
+# depslib dependency file v1.0
+1497365475 source:d:\navevideojuego\src\gamemanager.cpp
+	"Gamemanager.h"
+	<stdio.h>
+	<conio.h>
+	<windows.h>
+	<stdlib.h>
+	<list>
+	<iostream>
+
+1497365958 d:\navevideojuego\include\gamemanager.h
+	<stdio.h>
+	<conio.h>
+	<windows.h>
+	<stdlib.h>
+	<list>
+	<iostream>
+
+1497368444 source:d:\navevideojuego\main.cpp
+	<iostream>
+	<stdio.h>
+	<conio.h>
+	<windows.h>
+	<stdlib.h>
+	<list>
+	"Gamemanager.h"
+	"Nave.h"
+	"Asteroide.h"
+	"Bala.h"
+
+1497365895 d:\navevideojuego\include\nave.h
+	<Gamemanager.h>
+
+1497366967 source:d:\navevideojuego\src\nave.cpp
+	"Nave.h"
+
+1497367679 d:\navevideojuego\include\asteroide.h
+	<Gamemanager.h>
+
+1497367794 source:d:\navevideojuego\src\asteroide.cpp
+	"Asteroide.h"
+	"Nave.h"
+
+1497368339 source:d:\navevideojuego\src\bala.cpp
+	"Bala.h"
+
+1497368339 d:\navevideojuego\include\bala.h
+	<Gamemanager.h>
+
+1497368446 source:e:\navevideojuego\main.cpp
+	<iostream>
+	<stdio.h>
+	<conio.h>
+	<windows.h>
+	<stdlib.h>
+	<list>
+	"Gamemanager.h"
+	"Nave.h"
+	"Asteroide.h"
+	"Bala.h"
+
+1497368782 source:e:\navevideojuego\src\asteroide.cpp
+	"Asteroide.h"
+	"Nave.h"
+
+1497368340 source:e:\navevideojuego\src\bala.cpp
+	"Bala.h"
+
+1497365476 source:e:\navevideojuego\src\gamemanager.cpp
+	"Gamemanager.h"
+	<stdio.h>
+	<conio.h>
+	<windows.h>
+	<stdlib.h>
+	<list>
+	<iostream>
+
+1497366968 source:e:\navevideojuego\src\nave.cpp
+	"Nave.h"
+
